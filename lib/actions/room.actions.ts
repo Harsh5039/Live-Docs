@@ -79,7 +79,7 @@ export const getDocuments = async(email : string) => {
 }
 } 
 
-export const updateDocumentAccess = async ({roomId ,email, userType, updatedBy }:ShareDocumentParams) =>{
+export const updateDocumentAccess = async ({roomId ,email, userType, updatedBy }:ShareDocumentParams) =>{ 
     try{
         const usersAccesses: RoomAccesses={
             [email]:getAccessType(userType) as AccessType,
@@ -105,7 +105,7 @@ export const updateDocumentAccess = async ({roomId ,email, userType, updatedBy }
                 
             })
         }
-        revalidatePath(`/doxuments/${roomId}`);
+        revalidatePath(`/documents/${roomId}`);
         return parseStringify(room);
     }catch(error){
         console.log(`Error happend while updating a room: ${error}`);

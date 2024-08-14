@@ -27,7 +27,7 @@ const ShareModel = ({roomId, collaborators, creatorId, currentUserType}: ShareDo
     const [email, setEmail] = useState('')
     const [userType, setUserType] =useState<UserType>('viewer');
 
-    const shareDocumentHandler =async() =>{
+    const shareDocumentHandler =async () =>{
       setLoading(true);
       await updateDocumentAccess({
           roomId ,
@@ -49,13 +49,13 @@ const ShareModel = ({roomId, collaborators, creatorId, currentUserType}: ShareDo
             className='min-w-4 md:size-5'
             />
             <p  className='mr-1 hidden sm:block'>
-                share
+                Share
             </p>
         </Button>
     </DialogTrigger>
     <DialogContent className='shad-dialog'>
       <DialogHeader>
-        <DialogTitle>manage who can view this project</DialogTitle>
+        <DialogTitle>Manage who can view this project</DialogTitle>
         <DialogDescription>
           Select who can view and edit this document
         </DialogDescription>
